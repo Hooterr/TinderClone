@@ -21,64 +21,64 @@
           xct:StateLayout.AnimateStateChanges="True">
 
         <xct:StateView StateKey="Loading"
-                        VerticalOptions="Center">
-            <ActivityIndicator IsRunning="True"/>
+                       VerticalOptions="Center">
+            <ActivityIndicator IsRunning="True" />
         </xct:StateView>
         <xct:StateView StateKey="Success">
             <pancardview:CardsView ItemsSource="{Binding Items}"
-                                    Grid.Row="0"
-                                    SelectedItem="{Binding SelectedUser, Mode=OneWayToSource}"
-                                    SelectedIndex="{Binding SelectedUserIndex}"
-                                    ItemSwipedCommand="{Binding ItemSwipedCommand}">
+                                   Grid.Row="0"
+                                   SelectedItem="{Binding SelectedUser, Mode=OneWayToSource}"
+                                   SelectedIndex="{Binding SelectedUserIndex}"
+                                   ItemSwipedCommand="{Binding ItemSwipedCommand}">
                 <pancardview:CardsView.ItemTemplate>
                     <DataTemplate x:DataType="responses:UserItem">
                         <Frame CornerRadius="5"
-                                Padding="0">
+                               Padding="0">
                             <Grid RowDefinitions="*, 300, 75"
-                                    RowSpacing="0">
+                                  RowSpacing="0">
 
                                 <!-- Image -->
                                 <Image Source="{Binding AvatarUrl}"
-                                        Aspect="AspectFill"
-                                        Grid.RowSpan="2" />
+                                       Aspect="AspectFill"
+                                       Grid.RowSpan="2" />
 
                                 <!-- Swipe status -->
                                 <controls:SwipeStatusView Status="{Binding Status}"
-                                                            VerticalOptions="Start"
-                                                            Margin="20, 40" />
+                                                          VerticalOptions="Start"
+                                                          Margin="20, 40" />
 
                                 <!-- Name, age -->
                                 <StackLayout Grid.Row="1"
-                                                Padding="15, 45"
-                                                VerticalOptions="End"
-                                                Spacing="5">
+                                             Padding="15, 45"
+                                             VerticalOptions="End"
+                                             Spacing="5">
 
                                     <Label Grid.Row="1"
-                                            FontSize="{StaticResource FontSizeLarge}"
-                                            FontAttributes="Bold"
-                                            TextColor="White">
+                                           FontSize="{StaticResource FontSizeLarge}"
+                                           FontAttributes="Bold"
+                                           TextColor="White">
                                         <Label.FormattedText>
                                             <FormattedString>
                                                 <Span Text="{Binding FirstName}" />
                                                 <Span Text=", " />
                                                 <Span Text="{Binding Age}"
-                                                        FontSize="{StaticResource FontSizeRegular}" />
+                                                      FontSize="{StaticResource FontSizeRegular}" />
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
 
                                     <Label Text="{Binding Email}"
-                                            FontSize="{StaticResource FontSizeSmall}"
-                                            Grid.Row="1"
-                                            TextColor="White" />
+                                           FontSize="{StaticResource FontSizeSmall}"
+                                           Grid.Row="1"
+                                           TextColor="White" />
 
                                     <StackLayout.Background>
                                         <LinearGradientBrush EndPoint="0,1">
                                             <GradientStop Offset="0.0"
-                                                            Color="Transparent" />
+                                                          Color="Transparent" />
 
                                             <GradientStop Offset="1.0"
-                                                            Color="Black" />
+                                                          Color="Black" />
 
                                         </LinearGradientBrush>
                                     </StackLayout.Background>
@@ -86,12 +86,12 @@
 
                                 <!-- Buttons -->
                                 <ContentView BackgroundColor="Black"
-                                                Grid.Row="2">
+                                             Grid.Row="2">
 
                                     <StackLayout Orientation="Horizontal"
-                                                    Padding="0, 10"
-                                                    HorizontalOptions="Center"
-                                                    Spacing="15">
+                                                 Padding="0, 10"
+                                                 HorizontalOptions="Center"
+                                                 Spacing="15">
 
                                         <!-- Super like -->
                                         <Button Text="{x:Static fonts:Glyps.Star}"
