@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewmodels="clr-namespace:Tindero.ViewModels"
+             xmlns:fonts="clr-namespace:Tindero.Fonts"
+             x:DataType="viewmodels:LoginViewModel"
+             mc:Ignorable="d"
+             x:Class="Tindero.Views.LoginPage"
+             Shell.NavBarIsVisible="False"
+             Background="{StaticResource PrimaryBackgroundGradient}">
+
+    <ContentPage.Content>
+        <!-- Main content -->
+        <StackLayout VerticalOptions="Center"
+                     Padding="15, 0"
+                     Spacing="75">
+
+            <!-- Logo text -->
+            <Label TextColor="White"
+                   FontSize="50"
+                   HorizontalTextAlignment="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{x:Static fonts:Glyps.Heart}"
+                              FontFamily="FaRegular"
+                              FontSize="50" />
+                        <Span Text=" tinder" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <!-- Login panel -->
+            <Frame CornerRadius="5"
+                   BackgroundColor="{StaticResource Gray}">
+                <StackLayout>
+                    <!-- User name -->
+                    <Entry Placeholder="Username"
+                           PlaceholderColor="{StaticResource Primary}"
+                           TextColor="{StaticResource Primary}"
+                           ClearButtonVisibility="WhileEditing" />
+
+                    <!-- Password -->
+                    <Entry IsPassword="True"
+                           Placeholder="Password"
+                           TextColor="{StaticResource Primary}"
+                           PlaceholderColor="{StaticResource Primary}"
+                           ClearButtonVisibility="WhileEditing" />
+
+                    <!-- Submit -->
+                    <Button Text="Login"
+                            Margin="0, 25, 0, 0"
+                            Command="{Binding LoginCommand}" />
+
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

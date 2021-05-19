@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fonts="clr-namespace:Tindero.Fonts"
+             x:Class="Tindero.Views.StartupPage"
+             Shell.TabBarIsVisible="False"
+             Shell.NavBarIsVisible="False"
+             Background="{StaticResource PrimaryBackgroundGradient}">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+
+            <!-- Logo text -->
+            <Label TextColor="White"
+                   FontSize="50"
+                   HorizontalTextAlignment="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{x:Static fonts:Glyps.Heart}"
+                              FontFamily="FaRegular"
+                              FontSize="50" />
+                        <Span Text=" tinder" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <ActivityIndicator IsRunning="True"
+                               Color="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
